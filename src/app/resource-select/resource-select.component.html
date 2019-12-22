@@ -1,0 +1,13 @@
+<h1 class="mat-headline">Welcome in Star Wars Fighter!</h1>
+<h2 class="mat-h2">Choose fight category:</h2>
+<div class="resource-card-area">
+  <app-resource-select-card
+    (click)="clicked()"
+    [routerLink]="['/fight', 'ships']"
+    title="ships"
+    image="https://static.turbosquid.com/Preview/2015/10/14__02_29_23/xwingtopleft_01_open_01.jpgb5dc9c7c-25bc-44f8-88ba-50e41873111aOriginal.jpg"></app-resource-select-card>
+  <app-resource-select-card
+    [routerLink]="['/fight', 'champions']"
+    title="champions"
+    image="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Han_Solo_depicted_in_promotional_image_for_Star_Wars_%281977%29.jpg/220px-Han_Solo_depicted_in_promotional_image_for_Star_Wars_%281977%29.jpg"></app-resource-select-card>
+</div>

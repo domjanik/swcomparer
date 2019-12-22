@@ -1,0 +1,22 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Orbitron'
+);
+
+body {
+  @include angular-material-typography($custom-typography);
+  color: #eeeeff;
+  background: #0b0818;
+  margin: 0;
+}
+
+router-outlet ~ * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

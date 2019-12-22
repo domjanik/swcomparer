@@ -1,0 +1,21 @@
+<div class="mat-h1" [@fade]
+     *ngIf="!hideLoadingText || (player1 | async).loading || (player2 | async).loading">{{loadingText}}</div>
+<div class="mat-h1" [@fade] *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">
+  Winner of this battle is...
+</div>
+<div class="fight-board" [@fade] *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">
+  <app-resource-card [data]="(player1 | async).currentResource" [win]="(winner | async)  === 'p1'"
+                     [type]="type | async"></app-resource-card>
+  <app-resource-card [data]="(player2 | async).currentResource" [win]="(winner | async)  === 'p2'"
+                     [type]="type | async"></app-resource-card>
+</div>
+
+<div class="mat-h1" [@fade] *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">
+  <div *ngIf="(winner | async) === 'p1'">Player 1 with his {{type | async}} - {{(player1 | async).currentResource.name}}</div>
+  <div *ngIf="(winner | async)  === 'p2'">Player 2 with his {{type | async}} - {{(player1 | async).currentResource.name}}</div>
+  <div *ngIf="(winner | async)  === 'draw'">Noone! Duel result was unable to determine! Probably both players were eaten
+    by Sarlacc...
+  </div>
+</div>
+<app-score-board [@fade] *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading"></app-score-board>
+<button (click)="tryAgain()" *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">Try again!</button>
