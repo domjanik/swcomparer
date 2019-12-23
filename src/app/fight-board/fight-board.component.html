@@ -12,7 +12,7 @@
                      [type]="type | async"></app-resource-card>
 </div>
 
-<div class="mat-h1" [@fade] *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">
+<div class="mat-h1 result" [@fade] *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">
   <div *ngIf="(winner | async) === 'p1'">Player 1 with his {{type | async}}
     - {{(player1 | async).currentResource.name}}</div>
   <div *ngIf="(winner | async)  === 'p2'">Player 2 with his {{type | async}}
