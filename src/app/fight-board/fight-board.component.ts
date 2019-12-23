@@ -65,6 +65,10 @@ export class FightBoardComponent implements OnInit {
     }, 2000);
   }
 
+  back() {
+
+  }
+
   tryAgain() {
     this.type.pipe(first()).subscribe((type) => {
       const optionId = Math.floor(Math.random() * (5 - 1) + 1);

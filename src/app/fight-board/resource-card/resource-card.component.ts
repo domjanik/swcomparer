@@ -10,7 +10,6 @@ import {PlayerResource} from '../../state/app/models/PlayerResource';
 export class ResourceCardComponent implements OnInit {
   @Input() data: PlayerResource;
 
-  @HostBinding('class')
   @Input() type: string;
 
   @HostBinding('class.wins')

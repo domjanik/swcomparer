@@ -15,8 +15,4 @@ export class ResourceSelectComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  clicked() {
-    this.store.dispatch(new TestAction());
-  }
 }

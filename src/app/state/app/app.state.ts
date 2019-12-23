@@ -14,13 +14,15 @@ import {combineLatest, Observable, Observer} from 'rxjs';
 import {appInit} from './inits/app.init';
 import {AppStateModel} from './models/AppStateModel';
 import {ResourceListDTO} from './models/ResourceListDTO';
+import {ResourceShip} from './models/ResourceShip';
+import {ResourceChampions} from './models/ResourceChampions';
 
 @State<AppStateModel>({
   name: 'app',
   defaults: appInit
 })
 export class AppState {
-  constructor(private store: Store, public shipService: ShipService, public championService: ChampionService) {
+  constructor(private store: Store, private shipService: ShipService, private championService: ChampionService) {
   }
 
   getRandomChampion(data) {
@@ -149,17 +151,20 @@ export class AppState {
     let winner: string;
     if (state.player1.currentResource && state.player2.currentResource) {
       if (state.resourceType === 'ship') {
-        if (Number(state.player1.currentResource.crew) > Number(state.player2.currentResource.crew)) {
+        if (Number((state.player1.currentResource as ResourceShip).crew) > Number((state.player2.currentResource as ResourceShip).crew)) {
           winner = 'p1';
-        } else if (Number(state.player1.currentResource.crew) < Number(state.player2.currentResource.crew)) {
+          // tslint:disable-next-line:max-line-length
+        } else if (Number((state.player1.currentResource as ResourceShip).crew) < Number((state.player2.currentResource as ResourceShip).crew)) {
           winner = 'p2';
         } else {
           winner = 'draw';
         }
       } else if (state.resourceType === 'champion') {
-        if (Number(state.player1.currentResource.mass) > Number(state.player2.currentResource.mass)) {
+        // tslint:disable-next-line:max-line-length
+        if (Number((state.player1.currentResource as ResourceChampions).mass) > Number((state.player2.currentResource as ResourceChampions).mass)) {
           winner = 'p1';
-        } else if (Number(state.player1.currentResource.mass) < Number(state.player2.currentResource.mass)) {
+          // tslint:disable-next-line:max-line-length
+        } else if (Number((state.player1.currentResource as ResourceChampions).mass) < Number((state.player2.currentResource as ResourceChampions).mass)) {
           winner = 'p2';
         } else {
           winner = 'draw';

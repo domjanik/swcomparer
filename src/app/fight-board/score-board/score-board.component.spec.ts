@@ -1,23 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ScoreBoardComponent } from './score-board.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ScoreBoardComponent} from './score-board.component';
 import {NgxsModule, Store} from '@ngxs/store';
-import {AppState} from '../../state/app/app.state';
 import {of} from 'rxjs';
 
-fdescribe('ScoreBoardComponent', () => {
+describe('ScoreBoardComponent', () => {
   let component: ScoreBoardComponent;
   let fixture: ComponentFixture<ScoreBoardComponent>;
   let store: Store;
   let storeSpy;
 
   beforeEach(async(() => {
-    storeSpy = jasmine.createSpyObj<Store>(['dispatch', 'selectSnapshot']  as any);
+    storeSpy = jasmine.createSpyObj<Store>(['dispatch', 'selectSnapshot'] as any);
     TestBed.configureTestingModule({
       imports: [NgxsModule.forRoot([])],
       providers: [{provide: Store, useValue: storeSpy}],
-      declarations: [ ScoreBoardComponent ]
+      declarations: [ScoreBoardComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     store = TestBed.get(Store);
   }));

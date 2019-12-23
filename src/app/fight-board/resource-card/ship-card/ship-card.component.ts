@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {PlayerResource} from '../../../state/app/models/PlayerResource';
+import {ResourceShip} from '../../../state/app/models/ResourceShip';
 
 @Component({
   selector: 'app-ship-card',
@@ -8,7 +8,8 @@ import {PlayerResource} from '../../../state/app/models/PlayerResource';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShipCardComponent implements OnInit {
-  @Input() data: PlayerResource;
+  @Input() data: ResourceShip;
+
   constructor() { }
 
   ngOnInit() {

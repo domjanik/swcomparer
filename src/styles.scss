@@ -9,7 +9,7 @@ $custom-typography: mat-typography-config(
 body {
   @include angular-material-typography($custom-typography);
   color: #eeeeff;
-  background: #0b0818;
+  background-image: url("./assets/bg.jpg");
   margin: 0;
 }
 

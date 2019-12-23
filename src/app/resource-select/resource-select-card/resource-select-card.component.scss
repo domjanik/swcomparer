@@ -9,19 +9,6 @@
   align-items: center;
   position: relative;
 
-  &:before {
-    content: '';
-    top: -2px;
-    bottom: -2px;
-    right: -2px;
-    left: -2px;
-    position: absolute;
-    z-index: -1;
-    border-radius: 8px;
-    transform: skew(1.5deg, 1.5deg);
-    background-color: #128DED;
-  }
-
   &:hover {
     transform: scale(1.05);
     cursor: pointer;

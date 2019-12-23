@@ -4,12 +4,31 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-
+  .loading-message {
+    width: 100%;
+    text-align: center;
+  }
   .fight-board {
     flex: 0 1 auto;
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    @media (max-width: 1000px){
+      flex-direction: column;
+    }
+  }
+
+  .player-label {
+    display: none;
+    @media (max-width: 1000px) {
+      display: initial;
+    }
+  }
+
+  .fight-board-controls {
+    display: flex;
+    justify-content: space-between;;
+    width: 400px;
   }
 }

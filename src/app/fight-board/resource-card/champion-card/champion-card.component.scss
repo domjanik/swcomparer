@@ -1,0 +1,31 @@
+:host {
+  flex: 0 0 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .champion-card-header {
+    background-image: url('../../../../assets/champion.webp');
+    background-position: center top;
+    background-size: 150%;
+  }
+
+  .mat-card-title {
+    text-align: center;
+  }
+
+  .title {
+    display: flex;
+    flex: 0 0 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .crew-amount {
+    flex: 0 0 50px;
+    justify-content: center;
+    align-items: center;
+  }
+}
