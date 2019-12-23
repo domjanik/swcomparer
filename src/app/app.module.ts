@@ -15,7 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ResourceCardComponent} from './fight-board/resource-card/resource-card.component';
 import { ShipCardComponent } from './fight-board/resource-card/ship-card/ship-card.component';
 import { ChampionCardComponent } from './fight-board/resource-card/champion-card/champion-card.component';
-import {MatCardModule} from '@angular/material';
+import {MatButtonModule, MatCardModule} from '@angular/material';
 import { ScoreBoardComponent } from './fight-board/score-board/score-board.component';
 
 const states = [
@@ -42,6 +42,7 @@ const states = [
     NgxsModule.forRoot(states),
     BrowserAnimationsModule,
     RouterModule,
+    MatButtonModule,
   ],
   providers: [ShipService, ChampionService],
   bootstrap: [AppComponent]

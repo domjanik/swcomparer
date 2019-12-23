@@ -1,6 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ResourceSelectCardComponent} from './resource-card.component';
+import {ResourceSelectCardComponent} from './resource-select-card.component';
 
 describe('ResourceCardComponent', () => {
   let component: ResourceSelectCardComponent;

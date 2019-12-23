@@ -5,6 +5,10 @@
   justify-content: center;
   align-items: center;
 
+  .mat-card-title {
+    text-align: center;
+  }
+
   .title {
     display: flex;
     flex: 0 0 50px;

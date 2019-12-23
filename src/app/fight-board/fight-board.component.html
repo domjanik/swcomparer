@@ -17,5 +17,7 @@
     by Sarlacc...
   </div>
 </div>
+
 <app-score-board [@fade] *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading"></app-score-board>
-<button (click)="tryAgain()" *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">Try again!</button>
+
+<button mat-flat-button (click)="tryAgain()" *ngIf="hideLoadingText && !(player1 | async).loading && !(player2 | async).loading">Try again!</button>

@@ -1,12 +1,12 @@
 import {TestBed} from '@angular/core/testing';
 
-import {ChampionServiceService} from './champion-service.service';
+import {ChampionService} from './champion.service';
 
 describe('ChampionServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ChampionServiceService = TestBed.get(ChampionServiceService);
+    const service: ChampionService = TestBed.get(ChampionService);
     expect(service).toBeTruthy();
   });
 });
