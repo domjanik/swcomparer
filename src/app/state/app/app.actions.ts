@@ -9,7 +9,6 @@ export class CalculateResultAction {
   static readonly type = '[App] Calculate result';
 
   constructor() {
-
   }
 }
 

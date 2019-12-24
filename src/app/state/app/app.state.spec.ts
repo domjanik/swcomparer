@@ -183,20 +183,20 @@ describe('App actions', () => {
     actions$ = TestBed.get(Actions);
 
     store.reset({
-        app: {
-          ...appInit,
-          player1: {
-            ...appInit.player1,
-            winCounter: 1,
-            winStreak: 1
-          },
-          player2: {
-            ...appInit.player2,
-            winCounter: 1,
-            winStreak: 1
-          }
+      app: {
+        ...appInit,
+        player1: {
+          ...appInit.player1,
+          winCounter: 1,
+          winStreak: 1
+        },
+        player2: {
+          ...appInit.player2,
+          winCounter: 1,
+          winStreak: 1
         }
-      });
+      }
+    });
   }));
 
   describe('GetRandomShipPairAction', () => {
