@@ -2,6 +2,16 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ScoreBoardComponent} from './score-board.component';
 import {NgxsModule, Store} from '@ngxs/store';
 import {of} from 'rxjs';
+import {By} from 'protractor';
+import {Component, Input} from '@angular/core';
+
+@Component({
+  selector: 'app-player-score',
+  template: '<ng-content></ng-content>'
+})
+class MockPlayerScoreComponent {
+  @Input() data: any;
+}
 
 describe('ScoreBoardComponent', () => {
   let component: ScoreBoardComponent;
@@ -14,7 +24,7 @@ describe('ScoreBoardComponent', () => {
     TestBed.configureTestingModule({
       imports: [NgxsModule.forRoot([])],
       providers: [{provide: Store, useValue: storeSpy}],
-      declarations: [ScoreBoardComponent]
+      declarations: [ScoreBoardComponent, MockPlayerScoreComponent]
     })
       .compileComponents();
 

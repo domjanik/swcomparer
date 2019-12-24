@@ -1,10 +1,2 @@
-<div class="player-score mat-h1">
-  <span>Player 1 </span>
-  <span>Score : {{(player1 | async)?.winCounter}} </span>
-  <span *ngIf="(player1 | async)?.winStreak">WinStreak : {{(player1 | async)?.winStreak}} </span>
-</div>
-<div class="player-score mat-h1">
-  <span>Player 2 </span>
-  <span>Score : {{(player2 | async)?.winCounter}} </span>
-  <span *ngIf="(player2 | async)?.winStreak">WinStreak : {{(player2 | async)?.winStreak}} </span>
-</div>
+<app-player-score class="mat-h1" [data]="player1 | async"></app-player-score>
+<app-player-score class="mat-h1" [data]="player2 | async"></app-player-score>

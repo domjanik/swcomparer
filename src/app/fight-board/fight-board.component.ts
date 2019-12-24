@@ -29,7 +29,6 @@ export class FightBoardComponent implements OnInit {
 
   loadingText: string = '';
   hideLoadingText: boolean = false;
-
   championsLoadingTexts = [
     'Checking out local tavern for champions...',
     'Looking on Linkedin for new recruits...',
@@ -63,10 +62,6 @@ export class FightBoardComponent implements OnInit {
       this.cdr.markForCheck();
       this.hideLoadingText = true;
     }, 2000);
-  }
-
-  back() {
-
   }
 
   tryAgain() {

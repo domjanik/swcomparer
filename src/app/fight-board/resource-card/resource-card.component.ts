@@ -1,5 +1,7 @@
 import {ChangeDetectionStrategy, Component, HostBinding, Input, OnInit} from '@angular/core';
 import {PlayerResource} from '../../state/app/models/PlayerResource';
+import {ResourceChampions} from '../../state/app/models/ResourceChampions';
+import {ResourceShip} from '../../state/app/models/ResourceShip';
 
 @Component({
   selector: 'app-resource-card',
@@ -8,7 +10,7 @@ import {PlayerResource} from '../../state/app/models/PlayerResource';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ResourceCardComponent implements OnInit {
-  @Input() data: PlayerResource;
+  @Input() data: ResourceShip | ResourceChampions;
 
   @Input() type: string;
 

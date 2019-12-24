@@ -46,4 +46,14 @@ describe('ChampionCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have title "test"', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('mat-card-title').textContent).toContain('test');
+  });
+
+  it('should have content "42"', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain('42');
+  });
 });

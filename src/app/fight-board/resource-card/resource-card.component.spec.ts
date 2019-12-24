@@ -1,8 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {ResourceCardComponent} from './resource-card.component';
 import {Component, Input, NO_ERRORS_SCHEMA} from '@angular/core';
-
 
 @Component({
   selector: 'app-ship-card',
@@ -12,7 +10,6 @@ class MockShipCardComponent {
   @Input() data: any;
 }
 
-
 @Component({
   selector: 'app-champion-card',
   template: '<ng-content></ng-content>'
@@ -20,7 +17,6 @@ class MockShipCardComponent {
 class MockChampionCardComponent {
   @Input() data: any;
 }
-
 
 describe('ResourceCardComponent', () => {
   let component: ResourceCardComponent;
@@ -44,7 +40,15 @@ describe('ResourceCardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('with type "ship" should create app-ship-card', () => {
+    component.type = 'ship';
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-ship-card')).toBeDefined();
+  });
+
+  it('with type "champion" should create app-champion-card', () => {
+    component.type = 'champion';
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-champion-card')).toBeDefined();
   });
 });

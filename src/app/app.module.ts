@@ -17,6 +17,7 @@ import { ShipCardComponent } from './fight-board/resource-card/ship-card/ship-ca
 import { ChampionCardComponent } from './fight-board/resource-card/champion-card/champion-card.component';
 import {MatButtonModule, MatCardModule} from '@angular/material';
 import { ScoreBoardComponent } from './fight-board/score-board/score-board.component';
+import { PlayerScoreComponent } from './fight-board/score-board/player-score/player-score.component';
 
 const states = [
   AppState
@@ -31,7 +32,8 @@ const states = [
     ResourceCardComponent,
     ShipCardComponent,
     ChampionCardComponent,
-    ScoreBoardComponent
+    ScoreBoardComponent,
+    PlayerScoreComponent
   ],
   imports: [
     BrowserModule,
