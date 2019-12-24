@@ -4,8 +4,7 @@ import {
   AddPlayer2WinAction,
   CalculateResultAction,
   GetRandomChampionPairAction,
-  GetRandomShipPairAction,
-  TestAction
+  GetRandomShipPairAction
 } from './app.actions';
 import {ShipService} from '../../services/ship.service';
 import {ChampionService} from '../../services/champion.service';
@@ -59,11 +58,6 @@ export class AppState {
         observer.complete();
       });
     }
-  }
-
-  @Action(TestAction)
-  ideaListLoad(ctx: StateContext<AppStateModel>, action: TestAction) {
-    console.log('Action Working!');
   }
 
   @Action(GetRandomShipPairAction)
@@ -126,7 +120,6 @@ export class AppState {
       obs.push(player2Data);
       return combineLatest(obs);
     })).subscribe((result) => {
-      console.log(result);
       const currentState = ctx.getState();
       ctx.patchState({
         resourceType: 'champion',
@@ -183,7 +176,6 @@ export class AppState {
 
   @Action(AddPlayer2WinAction)
   addPlayer2Win(ctx: StateContext<AppStateModel>, action: AddPlayer2WinAction) {
-    console.log('ap2wa');
     const state = ctx.getState();
     let p1WinStreak = state.player1.winStreak;
     const p2WinStreak = state.player2.winStreak + 1;
@@ -205,7 +197,6 @@ export class AppState {
 
   @Action(AddPlayer1WinAction)
   addPlayer1Win(ctx: StateContext<AppStateModel>, action: AddPlayer1WinAction) {
-    console.log('ap1wa');
     const state = ctx.getState();
     const p1WinStreak = state.player1.winStreak + 1;
     let p2WinStreak = state.player2.winStreak;

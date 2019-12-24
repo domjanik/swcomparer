@@ -5,13 +5,14 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {RouterTestingModule} from '@angular/router/testing';
 import {Actions, NgxsModule, ofActionDispatched, Store} from '@ngxs/store';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {Observable, Observer, of} from 'rxjs';
+import {Observer, of} from 'rxjs';
+import {Observable} from 'rxjs/Rx';
 import {GetRandomChampionPairAction, GetRandomShipPairAction} from '../state/app/app.actions';
 import {AppState} from '../state/app/app.state';
 import {ChampionService} from '../services/champion.service';
 import {ShipService} from '../services/ship.service';
 import {ResourceListDTO} from '../state/app/models/ResourceListDTO';
-import {PlayerResource} from '../state/app/models/PlayerResource';
+import {ActivatedRoute} from '@angular/router';
 
 class MockShipService {
   public getShipList(pageNr): Observable<ResourceListDTO> {
@@ -90,7 +91,14 @@ describe('FightBoardComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, BrowserAnimationsModule, NgxsModule.forRoot([AppState])],
       declarations: [FightBoardComponent],
-      providers: [{provide: ChampionService, useClass: MockChampionService}, {provide: ShipService, useClass: MockShipService}],
+      providers: [{provide: ChampionService, useClass: MockChampionService},
+        {provide: ShipService, useClass: MockShipService},
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: Observable.from([{type: 'ships'}]),
+          },
+        }],
       schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
@@ -108,6 +116,20 @@ describe('FightBoardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call constructor', (done) => {
+    actions$.pipe(ofActionDispatched(GetRandomShipPairAction)).subscribe((data) => {
+      expect(data).toBeDefined();
+      done();
+    });
+
+    TestBed.createComponent(FightBoardComponent);
+  });
+
+  it('should show loading text', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(component.shipLoadingTexts).toContain(compiled.querySelector('.loading-message').textContent);
   });
 
   it('should dispatch GetRandomShipPairAction after TryAgain with type = ship', (done) => {

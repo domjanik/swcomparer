@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Store} from '@ngxs/store';
-import {TestAction} from '../state/app/app.actions';
 
 @Component({
   selector: 'app-resource-select',

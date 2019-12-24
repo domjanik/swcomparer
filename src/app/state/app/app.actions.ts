@@ -1,10 +1,3 @@
-export class TestAction {
-  static readonly type = '[App] Test Action ';
-
-  constructor() {
-  }
-}
-
 export class GetRandomChampionPairAction {
   static readonly type = '[App] Get random champion pair';
 

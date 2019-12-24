@@ -2,7 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ResourceSelectCardComponent} from './resource-select-card.component';
 
-fdescribe('ResourceCardComponent', () => {
+describe('ResourceCardComponent', () => {
   let component: ResourceSelectCardComponent;
   let fixture: ComponentFixture<ResourceSelectCardComponent>;
 
