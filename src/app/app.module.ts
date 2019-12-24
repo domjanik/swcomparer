@@ -13,11 +13,11 @@ import {ShipService} from './services/ship.service';
 import {ChampionService} from './services/champion.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ResourceCardComponent} from './fight-board/resource-card/resource-card.component';
-import { ShipCardComponent } from './fight-board/resource-card/ship-card/ship-card.component';
-import { ChampionCardComponent } from './fight-board/resource-card/champion-card/champion-card.component';
+import {ShipCardComponent} from './fight-board/resource-card/ship-card/ship-card.component';
+import {ChampionCardComponent} from './fight-board/resource-card/champion-card/champion-card.component';
 import {MatButtonModule, MatCardModule} from '@angular/material';
-import { ScoreBoardComponent } from './fight-board/score-board/score-board.component';
-import { PlayerScoreComponent } from './fight-board/score-board/player-score/player-score.component';
+import {ScoreBoardComponent} from './fight-board/score-board/score-board.component';
+import {PlayerScoreComponent} from './fight-board/score-board/player-score/player-score.component';
 
 const states = [
   AppState

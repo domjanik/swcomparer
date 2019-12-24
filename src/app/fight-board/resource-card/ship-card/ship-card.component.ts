@@ -10,7 +10,8 @@ import {ResourceShip} from '../../../state/app/models/ResourceShip';
 export class ShipCardComponent implements OnInit {
   @Input() data: ResourceShip;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

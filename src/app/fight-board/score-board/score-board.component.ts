@@ -13,7 +13,8 @@ export class ScoreBoardComponent implements OnInit {
   @Select('app.player1') player1: Observable<PlayerData>;
   @Select('app.player2') player2: Observable<PlayerData>;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

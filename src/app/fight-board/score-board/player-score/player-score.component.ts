@@ -8,7 +8,9 @@ import {PlayerData} from '../../../state/app/models/PlayerData';
 })
 export class PlayerScoreComponent implements OnInit {
   @Input() data: PlayerData;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

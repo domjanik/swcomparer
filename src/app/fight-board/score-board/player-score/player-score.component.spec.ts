@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PlayerScoreComponent } from './player-score.component';
+import {PlayerScoreComponent} from './player-score.component';
 
 describe('PlayerScoreComponent', () => {
   let component: PlayerScoreComponent;
@@ -8,9 +8,9 @@ describe('PlayerScoreComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlayerScoreComponent ]
+      declarations: [PlayerScoreComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,7 +21,7 @@ describe('PlayerScoreComponent', () => {
       winCounter: 1,
       loading: false,
       currentResource: null
-    }
+    };
     fixture.detectChanges();
   });
 

@@ -9,7 +9,9 @@ import {ResourceChampions} from '../../../state/app/models/ResourceChampions';
 })
 export class ChampionCardComponent implements OnInit {
   @Input() data: ResourceChampions;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
